@@ -1,15 +1,29 @@
-
 import "../App.css";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
-function TaskList() {
+import PropTypes from 'prop-types';
+
+TaskList.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+function TaskList({id, title}) {
+  
+  console.log("title", title)
   return (
     <div id="taskList">
-      <Box sx={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
-        <h4>Task List</h4>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+       
+      >
+        <h4>{title}</h4>
         <Box>
           <IconButton aria-label="Edit">
             <EditNoteIcon />
@@ -22,6 +36,7 @@ function TaskList() {
           </IconButton>
         </Box>
       </Box>
+      ;
     </div>
   );
 }

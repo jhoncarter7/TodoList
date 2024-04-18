@@ -6,16 +6,21 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
-
-
+import {useDispatch} from 'react-redux'
+import { AddTodo } from "../redux/todoSlice";
 export default function TaskInput() {
   const [todo, setTodo] = useState("");
+  const dispatch = useDispatch()
+  
   const matches = useMediaQuery("(min-width:600px)");
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(todo);
+    dispatch(AddTodo(todo))
+    console.log(todo)
     setTodo("");
   };
+const randomId = Math.floor(Math.random()*1000)
+
 
   return (
     <Box
@@ -53,8 +58,8 @@ export default function TaskInput() {
           label="Type your todo here"
           name="Todo"
           top="2px"
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
+          value={todo ? todo.title : ""}
+          onChange={(e) => setTodo({id: randomId, title: e.target.value})}
           sx={
             matches
               ? { width: "30vw", backgroundColor: "white" }
