@@ -38,13 +38,13 @@ margin: auto;
 }
 
 
-/* Media query for mobile devices */
+/* Media query for tablet devices */
 @media screen and (max-width: 800px){
     #taskList{
         width: 90%;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
     #taskList{
         width: 95%;
         /* min-width: 26rem; */
@@ -52,4 +52,12 @@ margin: auto;
     #taskList p{
         font-size: small;
     }
+}
+
+@media screen and (max-width: 480px) {
+    #taskList p{
+      
+        width: 60%;
+    }
+    
 }
