@@ -59,7 +59,7 @@ const randomId = Math.floor(Math.random()*1000)
           name="Todo"
           top="2px"
           value={todo ? todo.title : ""}
-          onChange={(e) => setTodo({id: randomId, title: e.target.value})}
+          onChange={(e) => setTodo({id: randomId, title: e.target.value, complete: false})}
           sx={
             matches
               ? { width: "30vw", backgroundColor: "white" }

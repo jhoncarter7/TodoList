@@ -5,15 +5,40 @@ margin: auto;
 #taskList{
     margin: auto;
     width: 50%;
+    background-color: rgb(117, 115, 115);
+   border-radius: 12px;
+   padding-left: 1rem;
+   margin-bottom: 1rem;
+}
+
+#taskList p{
+    font-size: larger;
+    width: 70%;
+}
+
+#editTask{
+    border: none;
+    padding: 12px;
+    background: transparent;
+    width: 60%;
+    outline: none;
 }
 
 
 
 
-
 /* Media query for mobile devices */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
     #taskList{
         width: 90%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #taskList{
+        width: 95%;
+        /* min-width: 26rem; */
+    }
+    #taskList p{
+        font-size: small;
     }
 }
