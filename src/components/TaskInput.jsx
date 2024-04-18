@@ -16,7 +16,6 @@ export default function TaskInput() {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(AddTodo(todo))
-    console.log(todo)
     setTodo("");
   };
 const randomId = Math.floor(Math.random()*1000)

@@ -24,7 +24,18 @@ margin: auto;
     outline: none;
 }
 
-
+#notodo{
+    margin: auto;
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(117, 115, 115);
+    border-radius: 12px;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-top: 5rem;
+    font-size: large;
+}
 
 
 /* Media query for mobile devices */

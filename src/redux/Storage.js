@@ -1,10 +1,23 @@
 import {configureStore} from '@reduxjs/toolkit'
-
+import storage from 'redux-persist/lib/storage'
 import useTodos from './todoSlice'
+import {persistReducer, persistStore} from 'redux-persist'
 
-const store = configureStore({
+
+const persistConfig = {
+    key: 'root',
+    storage,
+    version : 1
+}
+
+const persistedReducer = persistReducer(persistConfig, useTodos)
+export const store = configureStore({
     reducer: {
-        todos: useTodos
-    }
+        todos: persistedReducer
+    },
+    middleware: (getDefaultMiddleware ) => getDefaultMiddleware ({
+        serializableCheck: false
+         })
 })
-export  {store}
+
+export const persistor = persistStore(store)

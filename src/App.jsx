@@ -10,7 +10,7 @@ function App() {
   return (
     <div id="main">
       <TaskInput />
-      {AllTodoList ?  AllTodoList.map((todo)=> <TaskList key={todo.id} id={todo.id} title={todo.title} complete={todo.complete}/>) : <div> Boring day </div>}
+      {AllTodoList.length > 0 ?  AllTodoList.map((todo)=> <TaskList key={todo.id} id={todo.id} title={todo.title} complete={todo.complete}/>) : <div id="notodo"> Boring day 🥱🥱</div>}
       <Toaster/>
     </div>
   );
